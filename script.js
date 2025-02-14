@@ -57,7 +57,14 @@ const flight = {
 
 //  2. Uložte do separátní proměnné objekt udávající maximální rozměry zavazadel.
 
-const maxDimensionbags = flight.baglimit.hand_height;
+const maxDimensionBags = {
+  maxHeightBag : flight.baglimit.hand_height,
+  maxWeightBag : flight.baglimit.hand_weight,
+  maxWidthBag : flight.baglimit.hand_width,
+  
+
+
+}
 
 
 
