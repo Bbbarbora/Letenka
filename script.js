@@ -53,26 +53,25 @@ const flight = {
 
 // 1.  Vypište do stránky název startovní a cílové země.
 
-  document.body.innerHTML = `<p>Startovní zeme je  ${flight.countryFrom.name} a cilova zeme je ${flight.countryTo.name}.</P> <br>`;
+  document.body.innerHTML = `<p style= "color:rgb(130, 25, 211); font-weight : bold;  ">Startovní zeme je  ${flight.countryFrom.name} a cilova zeme je ${flight.countryTo.name}.</P> <br>`;
 
 //  2. Uložte do separátní proměnné objekt udávající maximální rozměry zavazadel.
 
-const maxDimensionBags = {
-  maxHeightBag : flight.baglimit.hand_height,
-  maxWeightBag : flight.baglimit.hand_weight,
-  maxWidthBag : flight.baglimit.hand_width,
-  
-
-
-}
+const maxDimensionBags = flight.baglimit;
 
 
 
 //  3. Z objektu s rozměry zavazadel vytáhněte maximální povolené rozměry příručního zavazadla a vypište tyto rozměry opět jeden po druhém vypište do stránky.
 
 
+document.body.innerHTML += `Šírka príručnej batožiny: ${maxDimensionBags.hand_width} cm<br>`;
+document.body.innerHTML += `Výška príručnej batožiny: ${maxDimensionBags.hand_height} cm<br>`;
+document.body.innerHTML += `Dĺžka príručnej batožiny: ${maxDimensionBags.hand_length} cm<br>`;
+
 
 // 4.   Vypište do stránky, kolik cestující zaplatí za druhé zavazadlo v českých korunách zaokrouhleno nahoru na celé koruny.
 
   const secondBagPriceCzk = Math.ceil (flight.bags_price[2]*25.04)
-  document.body.innerHTML += `<p>Za druhé zavazadlo si cestující zaplatí ${secondBagPriceCzk}  CZK. </p> <br>`;
+  document.body.innerHTML += `<p style = "color:blue; font-weight: 500; font-size: 1.4rem" >Za druhé zavazadlo si cestující zaplatí ${secondBagPriceCzk}  CZK. </p> <br>`;
+
+  // 5.Pridanie stylu
